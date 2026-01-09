@@ -1,0 +1,31 @@
+{
+  "name": "pwmcpagents",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:db": "playwright test --reporter=./src/reporters/database-reporter.js",
+    "parse-report": "node src/scripts/parse-report.js",
+    "setup-db": "node src/scripts/setup-database.js",
+    "backfill-reports": "node src/scripts/backfill-reports.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Playwright test suite with Azure PostgreSQL integration",
+  "dependencies": {
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@azure/identity": "^4.13.0",
+    "@azure/playwright": "^1.0.0",
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "@types/pg": "^8.16.0",
+    "dotenv": "^17.2.3",
+    "node-html-parser": "^6.1.13"
+  }
+}
